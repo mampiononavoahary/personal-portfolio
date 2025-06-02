@@ -64,6 +64,10 @@ body {
   width: 60px;
   height: 40px;
 }
+.af-logo {
+  width: 60px;
+  height: 40px;
+}
 @media screen and (max-width: 992px) {
   body {
     font-size: 14px;
