@@ -60,6 +60,30 @@ body {
   width: 40px;
   height: 40px;
 }
+.figma-logo {
+  width: 100px;
+  height: 100px;
+}
+.jira-logo {
+  width: 70px;
+  height: 70px;
+}
+.aws-logo {
+  width: 100px;
+  height: 70px;
+}
+.github-logo {
+  width: 100px;
+  height: 80px;
+}
+.postman-logo {
+  width: 100px;
+  height: 80px;
+}
+.docker-logo {
+  width: 100px;
+  height: 80px;
+}
 .zoho-logo {
   width: 60px;
   height: 40px;
@@ -630,7 +654,7 @@ hr {
   position: absolute;
   bottom: -115px;
   left: -30%;
-  max-width:900px;
+  max-width: 900px;
   border: 1px solid #e1b783;
   border-radius: 10px;
 }
