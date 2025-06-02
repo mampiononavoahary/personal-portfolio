@@ -92,6 +92,19 @@ body {
   width: 60px;
   height: 40px;
 }
+.projet{
+  display: flex;
+  flex-direction: column;
+}
+.link-projet{
+  font-size: 12px;
+}
+.tec{
+  border: 1px solid green;
+  border-radius: 5px;
+  background-color: rgb(12, 100, 85);
+}
+
 @media screen and (max-width: 992px) {
   body {
     font-size: 14px;
