@@ -92,14 +92,14 @@ body {
   width: 60px;
   height: 40px;
 }
-.projet{
+.projet {
   display: flex;
   flex-direction: column;
 }
-.link-projet{
+.link-projet {
   font-size: 12px;
 }
-.tec{
+.tec {
   border: 1px solid green;
   border-radius: 5px;
   background-color: rgb(12, 100, 85);
@@ -517,6 +517,10 @@ hr {
   }
 }
 
+.header-page {
+  position: relative;
+  z-index: 1;
+}
 .header-page h2:before,
 .header-page h2:before {
   content: "";
@@ -820,7 +824,7 @@ hr {
 
 .img-fluid {
   width: 100%;
-  height: auto;
+  height: 250px;
 }
 
 /* scroll icon */
