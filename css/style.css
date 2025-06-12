@@ -99,6 +99,10 @@ body {
 .link-projet {
   font-size: 12px;
 }
+.img-work{
+  width: 100%;
+  height: 100%;
+}
 .tec {
   border: 1px solid green;
   border-radius: 5px;
