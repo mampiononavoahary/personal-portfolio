@@ -202,43 +202,61 @@
               </ul>
             </div>
             <div class="col-md-7 col-md-push-1">
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Nom" />
+              <form id="contact-form">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <input
+                        type="text"
+                        name="name"
+                        class="form-control"
+                        placeholder="Nom"
+                        required
+                      />
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <input
+                        type="email"
+                        name="email"
+                        class="form-control"
+                        placeholder="Email"
+                        required
+                      />
+                    </div>
+                  </div>
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <textarea
+                        name="message"
+                        class="form-control"
+                        id="message"
+                        cols="30"
+                        rows="7"
+                        placeholder="Message"
+                        required
+                      ></textarea>
+                    </div>
+                  </div>
+                  <div class="col-md-12">
+                    <div class="form-group text-right">
+                      <input
+                        type="submit"
+                        value="Envoyer"
+                        class="btn btn-primary"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-md-12">
+                    <p
+                      id="email-status"
+                      class="text-success"
+                      style="margin-top: 10px"
+                    ></p>
                   </div>
                 </div>
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <input
-                      type="text"
-                      class="form-control"
-                      placeholder="Email"
-                    />
-                  </div>
-                </div>
-                <div class="col-md-12">
-                  <div class="form-group">
-                    <textarea
-                      name="message"
-                      class="form-control"
-                      id="message"
-                      cols="30"
-                      rows="7"
-                      placeholder="Message"
-                    ></textarea>
-                  </div>
-                </div>
-                <div class="col-md-12">
-                  <div class="form-group text-right">
-                    <input
-                      type="submit"
-                      value="Envoyer"
-                      class="btn btn-primary"
-                    />
-                  </div>
-                </div>
-              </div>
+              </form>
             </div>
           </div>
         </div>
@@ -303,6 +321,35 @@
     <script src="js/typed.min.js"></script>
     <!-- Custom JS -->
     <script src="js/custom.js"></script>
+
+    <!-- EmailJS CDN -->
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script>
+      // Initialiser EmailJS avec ta clé publique
+      (function () {
+        emailjs.init("b_-4M2WENCq5Nkqrp");
+      })();
+
+      // Formulaire
+      document
+        .getElementById("contact-form")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          emailjs.sendForm("service_u3nmrhm", "template_1k9l4no", this).then(
+            function () {
+              document.getElementById("email-status").innerText =
+                "✅ Message envoyé avec succès !";
+              document.getElementById("contact-form").reset();
+            },
+            function (error) {
+              console.error(error);
+              document.getElementById("email-status").innerText =
+                "❌ Une erreur s’est produite. Veuillez réessayer.";
+            },
+          );
+        });
+    </script>
   </body>
 
   <!-- contact.html  26 Nov 2019 03:54:11 GMT -->
